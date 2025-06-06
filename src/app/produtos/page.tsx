@@ -55,13 +55,12 @@ export default function ProdutosPage() {
       }
     };
 
-    fetchProdutos(); // Chama a função de busca quando o componente é montado.
+    fetchProdutos();
   }, []); // Array de dependências vazio: o efeito executa apenas uma vez (ao montar).
 
   // --- Função `handleDelete` para Excluir um Produto ---
   // Esta função é chamada quando o botão "Excluir" de um produto na lista é clicado.
   const handleDelete = async (id: string) => {
-    // Pede confirmação ao usuário antes de prosseguir com a exclusão.
     if (window.confirm('Tem certeza que deseja excluir este produto?')) {
       try {
         // Tenta excluir o produto da API usando o ID fornecido.
@@ -71,19 +70,18 @@ export default function ProdutosPage() {
         setProdutos(produtos.filter(produto => produto.id !== id));
       } catch (err) {
         // Se ocorrer um erro durante a exclusão:
-        console.error('Erro ao excluir produto:', err); // Loga o erro no console.
-        alert('Erro ao excluir produto. Tente novamente.'); // Exibe um alerta de erro para o usuário.
+        console.error('Erro ao excluir produto:', err);
+        alert('Erro ao excluir produto. Tente novamente.');
       }
     }
   };
 
   // --- Renderização do Componente ---
   return (
-    <Layout> {/* O componente Layout envolve todo o conteúdo da página para manter a estrutura e o estilo. */}
+    <Layout>
       <div className="space-y-6"> {/* Container principal com espaçamento vertical entre os elementos. */}
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-black">Produtos</h1> {/* Título da página. */}
-          {/* Link para a página de adição de novo produto. Otimizado pelo `Link` do Next.js. */}
+          <h1 className="text-3xl font-bold text-black">Produtos</h1>
           <Link href="/produtos/novo">
             <Button variant="primary">Adicionar Produto</Button> {/* Botão para adicionar um novo produto. */}
           </Link>
@@ -111,7 +109,7 @@ export default function ProdutosPage() {
                   <TableHead>Preço</TableHead>
                   <TableHead>Quantidade</TableHead>
                   <TableHead>Categoria</TableHead>
-                  <TableHead>Ações</TableHead> {/* Coluna para os botões de ação (Detalhes, Editar, Excluir). */}
+                  <TableHead>Ações</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -124,27 +122,24 @@ export default function ProdutosPage() {
                       <TableCell>{produto.quantidade}</TableCell>
                       <TableCell>{produto.categoria || '-'}</TableCell> {/* Exibe a categoria ou '-' se vazia. */}
                       <TableCell>
-                        <div className="flex space-x-2"> {/* Container para os botões de ação do produto específico. */}
-                          {/* Botão "Detalhes": Redireciona para a página de detalhes do produto. */}
+                        <div className="flex space-x-2">
                           <Button
-                            variant="secondary" // Estilo secundário para o botão.
-                            size="sm" // Tamanho pequeno para o botão.
+                            variant="secondary"
+                            size="sm"
                             onClick={() => router.push(`/produtos/${produto.id}`)}
                           >
                             Detalhes
                           </Button>
-                          {/* Botão "Editar": Redireciona para a página de edição do produto. */}
                           <Button
-                            variant="primary" // Estilo primário para o botão.
-                            size="sm" // Tamanho pequeno para o botão.
+                            variant="primary"
+                            size="sm"
                             onClick={() => router.push(`/produtos/editar/${produto.id}`)}
                           >
                             Editar
                           </Button>
-                          {/* Botão "Excluir": Chama a função `handleDelete` para remover o produto. */}
                           <Button
-                            variant="danger" // Estilo de perigo (vermelho) para o botão.
-                            size="sm" // Tamanho pequeno para o botão.
+                            variant="danger"
+                            size="sm"
                             onClick={() => handleDelete(produto.id)}
                           >
                             Excluir

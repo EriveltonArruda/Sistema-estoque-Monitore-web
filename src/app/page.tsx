@@ -18,16 +18,8 @@ import Layout from '@/components/layout/Layout';
 
 import Card, { CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 // Importa componentes UI (User Interface) que seguem um padrão de "cartão".
-// - `Card`: O contêiner principal para agrupar informações relacionadas.
-// - `CardHeader`: Uma seção para o cabeçalho do cartão.
-// - `CardTitle`: O título exibido dentro do `CardHeader`.
-// - `CardContent`: A área para o conteúdo principal do cartão.
-// Eles ajudam a organizar e estilizar o conteúdo de forma consistente.
 
 import Link from 'next/link';
-// Importa o componente `Link` do Next.js. É a forma recomendada de navegar entre
-// as páginas da sua aplicação Next.js. Ele otimiza o carregamento da página
-// pré-buscando os recursos, resultando em transições mais rápidas.
 
 import Button from '@/components/ui/Button';
 // Importa um componente `Button` customizado. Ele provavelmente encapsula estilos
@@ -122,21 +114,16 @@ export default function Home() {
   // --- Renderização da Interface do Usuário ---
   // O que será exibido na tela para o usuário.
   return (
-    // O componente `Layout` envolve todo o conteúdo, aplicando a estrutura visual global da sua aplicação
-    // (como o cabeçalho, rodapé e o contêiner principal).
     <Layout>
       {/* Um contêiner `div` principal para o conteúdo do dashboard. */}
-      {/* `space-y-6`: Adiciona espaçamento vertical entre os elementos filhos (usando Tailwind CSS). */}
       <div className="space-y-6">
-        {/* Título principal do Dashboard. */}
         <h1 className="text-3xl font-bold text-black">Dashboard</h1>
 
         {/* Renderização Condicional da Mensagem de Erro */}
         {/* Se a variável `error` tiver um valor (não for `null` ou vazio), esta `div` será exibida. */}
         {error && (
-          // Estilos Tailwind CSS para um alerta de erro vermelho.
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-            {error} {/* Exibe a mensagem de erro armazenada no estado `error`. */}
+            {error}
           </div>
         )}
 
@@ -151,42 +138,32 @@ export default function Home() {
           // Caso `loading` seja `false` (os dados já foram carregados), renderiza o conteúdo real do dashboard.
           // `<>` é um Fragmento React, usado para agrupar múltiplos elementos JSX sem adicionar um nó extra ao DOM.
           <>
-            {/* Grid para exibir os cartões de estatísticas. */}
-            {/* `grid grid-cols-1`: Em telas pequenas, uma coluna. */}
-            {/* `md:grid-cols-3`: Em telas médias e maiores, três colunas. */}
-            {/* `gap-6`: Espaçamento entre os itens do grid. */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* --- Card: Total de Produtos --- */}
               <Card>
                 <CardHeader>
                   <CardTitle>Total de Produtos</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {/* Exibe o número total de produtos com estilo grande e negrito. */}
                   <p className="text-4xl font-bold text-black">{totalProdutos}</p>
                   <p className="text-sm text-gray-500 mt-2">produtos cadastrados</p>
                 </CardContent>
               </Card>
 
-              {/* --- Card: Valor Total em Estoque --- */}
               <Card>
                 <CardHeader>
                   <CardTitle>Valor Total em Estoque</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {/* Exibe o valor total do estoque formatado para duas casas decimais, com "R$". */}
                   <p className="text-4xl font-bold text-black">R$ {valorTotalEstoque.toFixed(2)}</p>
                   <p className="text-sm text-gray-500 mt-2">em produtos</p>
                 </CardContent>
               </Card>
 
-              {/* --- Card: Produtos com Estoque Baixo --- */}
               <Card>
                 <CardHeader>
                   <CardTitle>Produtos com Estoque Baixo</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {/* Exibe o número de produtos com estoque baixo. */}
                   <p className="text-4xl font-bold text-black">{produtosEstoqueBaixo}</p>
                   <p className="text-sm text-gray-500 mt-2">produtos com estoque baixo</p>
                 </CardContent>
@@ -194,22 +171,14 @@ export default function Home() {
             </div>
 
             {/* --- Seção de Ações Rápidas --- */}
-            {/* `mt-8`: Margem superior para separar da seção de estatísticas. */}
             <div className="mt-8">
               {/* Div para organizar o título da seção. */}
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold">Ações Rápidas</h2>
               </div>
 
-              {/* Grid para os botões de ação rápida. */}
-              {/* `grid grid-cols-1`: Em telas pequenas, uma coluna. */}
-              {/* `md:grid-cols-2`: Em telas médias e maiores, duas colunas. */}
-              {/* `gap-4`: Espaçamento entre os botões. */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Link para a página de adição de novo produto. */}
-                {/* `Link`: Navegação otimizada do Next.js. */}
-                {/* `href="/produtos/novo"`: O caminho da página de destino. */}
-                {/* `className="block"`: Faz com que o Link ocupe toda a largura disponível. */}
                 <Link href="/produtos/novo" className="block">
                   {/* Componente `Button` com variante primária e largura total. */}
                   <Button variant="primary" className="w-full">

@@ -65,12 +65,7 @@ export const TableBody: React.FC<TableProps> = ({ children, className = '' }) =>
 // Componente `TableRow`: Representa uma linha individual da tabela (`<tr>`).
 export const TableRow: React.FC<TableProps> = ({ children, className = '' }) => {
   return (
-    // `<tr>`: O elemento HTML para uma linha de tabela.
     // `twMerge`: Combina classes.
-    // `border-b`: Adiciona uma borda inferior para separar as linhas.
-    // `transition-colors`: Habilita transições suaves para mudanças de cor (útil no hover).
-    // `hover:bg-gray-50`: Muda o fundo da linha para cinza claro quando o mouse passa por cima.
-    // `text-black`: Define a cor do texto para preto dentro da linha.
     <tr className={twMerge('border-b transition-colors hover:bg-gray-50 text-black', className)}>
       {children}
     </tr>
@@ -80,14 +75,7 @@ export const TableRow: React.FC<TableProps> = ({ children, className = '' }) => 
 // Componente `TableHead`: Representa uma célula de cabeçalho dentro de uma linha de cabeçalho (`<th>`).
 export const TableHead: React.FC<TableProps> = ({ children, className = '' }) => {
   return (
-    // `<th>`: O elemento HTML para uma célula de cabeçalho da tabela.
     // `twMerge`: Combina classes.
-    // `h-12`: Define uma altura fixa para a célula do cabeçalho.
-    // `px-4`: Preenchimento horizontal.
-    // `text-left`: Alinha o texto à esquerda.
-    // `align-middle`: Alinha o conteúdo verticalmente ao meio.
-    // `font-medium`: Peso da fonte médio.
-    // `text-black`: Cor do texto preta.
     <th className={twMerge('h-12 px-4 text-left align-middle font-medium text-black', className)}>
       {children}
     </th>
@@ -97,11 +85,6 @@ export const TableHead: React.FC<TableProps> = ({ children, className = '' }) =>
 // Componente `TableCell`: Representa uma célula de dados dentro de uma linha (`<td>`).
 export const TableCell: React.FC<TableProps> = ({ children, className = '' }) => {
   return (
-    // `<td>`: O elemento HTML para uma célula de dados da tabela.
-    // `twMerge`: Combina classes.
-    // `p-4`: Preenchimento em todas as direções para a célula.
-    // `align-middle`: Alinha o conteúdo verticalmente ao meio.
-    // `text-black`: Cor do texto preta.
     <td className={twMerge('p-4 align-middle text-black', className)}>
       {children}
     </td>

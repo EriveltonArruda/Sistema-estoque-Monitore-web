@@ -36,13 +36,7 @@ const Input: React.FC<InputProps> = ({
       {/* Se `label` tiver um valor (não for nulo ou vazio), o elemento `<label>` será renderizado. */}
       {label && (
         <label
-          htmlFor={id} // Atributo `htmlFor` é essencial para acessibilidade, ligando o rótulo ao input pelo seu `id`.
-          // Estilos Tailwind CSS para o rótulo.
-          // `block`: Faz o rótulo ocupar sua própria linha.
-          // `text-sm`: Tamanho de fonte pequeno.
-          // `font-medium`: Peso da fonte médio.
-          // `text-gray-900`: Cor do texto cinza escuro.
-          // `mb-1`: Margem inferior de 1 unidade (4px), separando o rótulo do campo de entrada.
+          htmlFor={id} // Atributo `htmlFor` é essencial para acessibilidade, ligando o rótulo ao i
           className="block text-sm font-medium text-gray-900 mb-1"
         >
           {label} {/* Exibe o texto do rótulo. */}
@@ -53,18 +47,7 @@ const Input: React.FC<InputProps> = ({
         id={id} // Define o `id` do input, correspondendo ao `htmlFor` do label.
         // Combina todas as classes CSS usando `twMerge`.
         className={twMerge(
-          // Estilos base para o campo de entrada:
-          // `w-full`: Ocupa 100% da largura disponível.
-          // `px-3 py-2`: Preenchimento horizontal e vertical.
-          // `border`: Adiciona uma borda.
-          // `rounded-md`: Cantos arredondados.
-          // `shadow-sm`: Sombra sutil.
-          // `focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`: Estilos de foco
-          //   (remove o contorno padrão, adiciona um anel azul e borda azul ao focar).
           'w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500',
-          // Estilo condicional da borda baseado no erro:
-          // Se `error` tiver um valor, a borda fica vermelha (`border-red-500`).
-          // Caso contrário, a borda é cinza (`border-gray-300`).
           error ? 'border-red-500' : 'border-gray-300',
           className // Quaisquer classes adicionais passadas via prop `className` (terão prioridade devido ao `twMerge`).
         )}
@@ -73,7 +56,7 @@ const Input: React.FC<InputProps> = ({
       />
       {/* Renderização Condicional da Mensagem de Erro */}
       {/* Se `error` tiver um valor, o parágrafo `<p>` com a mensagem de erro será exibido. */}
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>} {/* Exibe a mensagem de erro em vermelho. */}
+      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
   );
 };

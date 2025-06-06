@@ -31,18 +31,9 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,  // Padrão: 'false' (botão habilitado) se não for especificado.
 }) => {
   // Define os estilos base que se aplicam a TODOS os botões, independentemente da variante ou tamanho.
-  // - inline-flex: Permite que o botão se comporte como um elemento inline mas com propriedades flexbox.
-  // - items-center justify-center: Centraliza o conteúdo (children) vertical e horizontalmente.
-  // - rounded-md: Adiciona bordas arredondadas.
-  // - font-medium: Define o peso da fonte.
-  // - transition-colors: Habilita transição suave para mudanças de cor (ex: no hover).
-  // - focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2: Estilos para quando o botão está focado (para acessibilidade).
-  // - disabled:opacity-50 disabled:pointer-events-none: Estilos para quando o botão está desabilitado (opacidade e impede eventos do mouse).
   const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
 
   // Objeto que mapeia cada 'variant' para um conjunto específico de classes Tailwind CSS.
-  // Isso define as cores de fundo, texto e hover para cada tipo de botão.
-  // - bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500: Exemplo de estilos para 'primary'.
   const variantStyles = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500',
     secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus-visible:ring-gray-500',

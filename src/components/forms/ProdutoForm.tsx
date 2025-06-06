@@ -3,19 +3,12 @@ import React, { useState } from 'react';
 // - useState: Essencial para gerenciar o estado interno do componente, como os dados do formulário e as mensagens de erro.
 
 import Button from '../ui/Button';
-// Importa o componente 'Button' que você provavelmente tem em seu diretório 'ui'.
-// Ele fornece botões com estilos consistentes.
 
 import Input from '../ui/Input';
-// Importa o componente 'Input' que você provavelmente tem em seu diretório 'ui'.
-// Ele fornece campos de entrada com estilos e funcionalidades consistentes (incluindo exibição de erros).
 
 import Card, { CardHeader, CardTitle, CardContent, CardFooter } from '../ui/Card';
-// Importa os componentes de 'Card' e suas subpartes (Header, Title, Content, Footer).
-// Usados para estruturar visualmente o formulário dentro de um "cartão", melhorando a organização e o design.
 
 import Link from 'next/link';
-// Importa o componente 'Link' do Next.js, usado para navegação otimizada entre as páginas.
 
 // Define a interface para os dados do formulário de produto.
 // Isso é útil para garantir a tipagem (TypeScript) e a consistência dos dados que o formulário manipula.
@@ -220,15 +213,10 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({
 
         <CardFooter>
           {/* Link para voltar à lista de produtos. */}
-          {/* className="mr-79 px-2 py-2 bg-gray-200 text-black rounded": Estilização com Tailwind CSS. */}
-          {/* O 'mr-79' parece um espaçamento um pouco grande, talvez seja um typo e queria ser 'mr-4' ou algo assim, mas mantive como está. */}
           <Link href="/produtos" className="mr-79 px-2 py-2 bg-gray-200 text-black rounded">
             Voltar para a Lista
           </Link>
           {/* Botão de submissão do formulário. */}
-          {/* type="submit": Essencial para que o botão acione o onSubmit do formulário. */}
-          {/* variant="primary": Estilo primário do botão. */}
-          {/* O texto do botão muda dependendo do modo (edição ou adição). */}
           <Button type="submit" variant="primary">
             {isEditing ? 'Atualizar Produto' : 'Adicionar Produto'}
           </Button>

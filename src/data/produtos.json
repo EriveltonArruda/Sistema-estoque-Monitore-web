@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "nome": "Notebook Dell Inspiron",
+    "descricao": "Notebook Dell Inspiron 15 polegadas, 8GB RAM, SSD 256GB",
+    "preco": 3500,
+    "quantidade": 1,
+    "sku": "DELL-INSP-001",
+    "categoria": "Eletrônicos",
+    "fornecedor": "Dell Computadores",
+    "dataEntrada": "2023-01-15T10:30:00Z",
+    "dataAtualizacao": "2025-06-06T12:45:18.874Z"
+  },
+  {
+    "id": "2",
+    "nome": "Mouse sem fio Logitech",
+    "descricao": "Mouse sem fio Logitech M185 com receptor USB",
+    "preco": 120,
+    "quantidade": 25,
+    "sku": "LOG-M185-002",
+    "categoria": "Periféricos",
+    "fornecedor": "Logitech",
+    "dataEntrada": "2023-02-10T09:15:00Z",
+    "dataAtualizacao": "2023-02-10T09:15:00Z"
+  }
+]
